@@ -1,0 +1,117 @@
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.card {
+    flex: 7% 1 1 ;
+    /* flex-basis: 6%;
+    flex-grow: 0;
+    flex-shrink: 1; */
+    border: 2px solid grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 2px;
+    height: 9vw;
+    box-sizing: border-box;
+}
+
+.card img {
+    max-width: 40%;
+    align-self: center;
+  }
+
+.card p:last-child {
+    transform: rotate(180deg);
+}
+
+.card p {
+    text-align: right;
+    padding-right: 4px;
+    margin: 0;
+    font-size: 14px;
+    
+}
+
+.back {
+    background: url('https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/9222/ExportedContentImage_00.png');
+    background-size: cover;
+}
+
+#header {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 70%;
+  }
+  #header .title {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  #header .title img {
+    max-width: 3em;
+  }
+  #header .title h2 {
+    padding-left: 0.5em;
+  }
+  #header .score {
+    margin: 0;
+    color: #6c90ac;
+  }
+  #header .tried {
+    margin-top: 0;
+  }
+
+  .paired {
+    background-color: #b0c4d4;
+  }
+
+  .wrong {
+    animation-name: wrongAnimation;
+    animation-duration: 0.2s;
+    animation-iteration-count: 5;
+  }
+  @keyframes wrongAnimation {
+    to {
+      border: 2px solid #ffd54f;
+    }
+  }
+
+  /** Game finished **/
+  #cards.completed .card {
+    background-color: #e0e0e0;
+  }
+  #cards.completed .card img,
+  #cards.completed .card p {
+    visibility: hidden;
+  }
+  #header.completed {
+    align-items: center
+  }
+  #header.completed .title {
+    width: 40%;
+    justify-content: center;
+  }
+  #header.completed > *:not(:first-child) {
+    position: absolute
+  }
+  #header.completed > p.complete {
+    font-size: 3em;
+    color: #758d9a;
+    font-weight: 700;
+    margin-top: 180px;
+  }
+  #header.completed > h2.score {
+    font-size: 2em;
+    color: #f2a94a;
+    margin-top: 280px;
+  }
+  #header.completed > p.tried {
+    color: #6f6f6f;
+    margin-top: 320px;
+  }
